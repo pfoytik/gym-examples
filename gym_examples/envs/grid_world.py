@@ -1,11 +1,11 @@
-import gym
-from gym import spaces
+import gymnasium as gym
+from gymnasium import spaces
 import pygame
 import numpy as np
 
 
 class GridWorldEnv(gym.Env):
-    metadata = {"render_modes": ["human", "rgb_array"], "render_fps": 4}
+    metadata = {"render_modes": ["human", "rgb_array"], "render_fps": 1}
 
     def __init__(self, render_mode=None, size=5):
         self.size = size  # The size of the square grid
@@ -59,6 +59,7 @@ class GridWorldEnv(gym.Env):
         }
 
     def reset(self, seed=None, options=None):
+        print("Resetting !!!!!!!!!")
         # We need the following line to seed self.np_random
         super().reset(seed=seed)
 
@@ -81,6 +82,7 @@ class GridWorldEnv(gym.Env):
         return observation, info
 
     def step(self, action):
+        print("Processed Step !!!!!!!!!")
         # Map the action (element of {0,1,2,3}) to the direction we walk in
         direction = self._action_to_direction[action]
         # We use `np.clip` to make sure we don't leave the grid
@@ -89,7 +91,7 @@ class GridWorldEnv(gym.Env):
         )
         # An episode is done iff the agent has reached the target
         terminated = np.array_equal(self._agent_location, self._target_location)
-        reward = 1 if terminated else 0  # Binary sparse rewards
+        reward = 1 if terminated else 0  # Binary sparse rewards        
         observation = self._get_obs()
         info = self._get_info()
 
