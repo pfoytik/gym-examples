@@ -1,3 +1,6 @@
+added gym_mdp.py which runs the wikiepedia markov decision process example (https://en.wikipedia.org/wiki/Markov_decision_process) and trains a q-learning to maximize the reward and then evaluates it. A couple of options of the rewards matrices are provided as examples.
+![image](https://github.com/pfoytik/gym-examples/assets/30268344/da35fb32-cf9d-4793-bf3c-5b27e53cbb99)
+
 This repository is no longer maintained, as Gym is not longer maintained and all future maintenance of it will occur in the replacing [Gymnasium](https://github.com/Farama-Foundation/Gymnasium) library. You can contribute Gymnasium examples to the Gymnasium repository and docs directly if you would like to. If you'd like to learn more about the transition from Gym to Gymnasium, you can read more about it [here](https://farama.org/Announcing-The-Farama-Foundation).
 
 # Gym Examples
